@@ -1,0 +1,8 @@
+python39.zip
+.
+./lib/site-packages
+./Scripts
+./lib/site-packages/win32
+./lib/site-packages/win32/lib
+# Uncomment to run site.main() automatically
+#import site

@@ -1,0 +1,6 @@
+.editorconfig
+.venv
+.git
+main.spec
+build
+dist
