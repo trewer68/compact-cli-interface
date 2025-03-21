@@ -273,7 +273,11 @@ def main(stdscr):
                         # Определяем полный путь
                         full_path = os.path.join(path, folder) if folder != path else folder
                         size = get_folder_size(full_path) # определяем размер папки ДО процесса компакта
-                        subprocess.Popen(f'cmd /c start \"\" /min cmd /k \" title {full_path} & CHCP 1251 & compact /C /S:"{full_path}" /A {variable} /I /EXE:LZX & exit\"', creationflags=subprocess.CREATE_NEW_CONSOLE,)  # Открываем проводник Windows с выбранными папками
+                        #debug
+                        #subprocess.Popen(f'cmd /c start \"\" /min cmd /k \" title {full_path} & CHCP 1251 & echo \"{full_path}\" & echo {variable} & timeout -t 9999 & compact /C /S:\"{full_path}\" /A {variable} /I /EXE:LZX & exit \"', creationflags=subprocess.CREATE_NEW_CONSOLE,)  # Открываем проводник Windows с выбранными папками
+                        #main
+                        subprocess.Popen(f'cmd /c start \"\" /min cmd /k \" title {full_path} & CHCP 1251 & compact /C /S:\"{full_path}\" /A {variable} /I /EXE:LZX & exit\"', creationflags=subprocess.CREATE_NEW_CONSOLE,)  # Открываем проводник Windows с выбранными папками
+                        
                         # subprocess.Popen(f'cmd /c start \"\" cmd /k \" title {full_path} & CHCP 1251 & timeout -t 9999\"', creationflags=subprocess.CREATE_NEW_CONSOLE,)  # Открываем проводник Windows с выбранными папками
                         # if (True): #debug
                         
